@@ -1,0 +1,21 @@
+:root {
+    --font-family-base: 'Roboto', sans-serif;
+
+    --color-black: #000000;
+    --color-white: #ffffff;
+
+    --rgb-gray-50: 247, 247, 247;
+    --rgb-gray-100: 227, 227, 227;
+    --rgb-gray-200: 200, 200, 200;
+    --rgb-gray-300: 164, 164, 164;
+    --rgb-gray-400: 128, 128, 128;
+    --rgb-gray-500: 102, 102, 102;
+    --rgb-gray-600: 81, 81, 81;
+    --rgb-gray-700: 67, 67, 67;
+    --rgb-gray-800: 56, 56, 56;
+    --rgb-gray-900: 49, 49, 49;
+    --rgb-gray-950: 26, 26, 26;
+
+    --rgb-blue-400: 0, 112, 255;
+    --rgb-red-400: 255, 69, 58;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veldslag</title>
+    <link rel="stylesheet" href="dist/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.0/socket.io.min.js"></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <div class="playing-field">
+        <div class="cards" data-hand="player_1">
+            <div class="card style-downwards-card" id="card-1"></div>
+            <div class="card style-downwards-card" id="card-2"></div>
+            <div class="card style-downwards-card" id="card-3"></div>
+            <div class="card style-downwards-card" id="card-4"></div>
+            <div class="card style-downwards-card" id="card-5"></div>
+        </div>
+
+        <div class="battlefield">
+            <div class="grid" data-board="player_1">
+                <div class="field" id="field-1"></div>
+                <div class="field" id="field-2"></div>
+                <div class="field" id="field-3"></div>
+                <div class="field" id="field-4"></div>
+                <div class="field" id="field-5"></div>
+                <div class="field" id="field-6"></div>
+            </div>
+            <div class="grid" data-board="player_2">
+                <div class="field" id="field-1"></div>
+                <div class="field" id="field-2"></div>
+                <div class="field" id="field-3"></div>
+                <div class="field" id="field-4"></div>
+                <div class="field" id="field-5"></div>
+                <div class="field" id="field-6"></div>
+            </div>
+        </div>
+
+        <div class="cards" data-hand="player_2">
+            <div class="card" id="card-1"></div>
+            <div class="card" id="card-2"></div>
+            <div class="card" id="card-3"></div>
+            <div class="card" id="card-4"></div>
+            <div class="card" id="card-5"></div>
+        </div>
+    </div>
+
+    <div class="side">
+        <div class="deck flipped"></div>
+        <div class="graveyard"></div>
+    </div>
+
+    <div class="logs" id="logs"></div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "veldslag",
+  "version": "1.0.0",
+  "description": "Cardgame prototype",
+  "main": "index.js",
+  "scripts": {
+    "dev:watch": "npx postcss src/css/main.css --dir src/dist/ --map --verbose --watch",
+    "start": "node src/server.js"
+  },
+  "author": "Stefan Hellings",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "postcss-hexrgba": "^2.1.0",
+    "postcss-import": "^15.1.0",
+    "postcss-nested": "^6.0.1",
+    "postcss-preset-env": "^8.3.1"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.6.1",
+    "socket.io-client": "^4.6.1"
+  }
+}

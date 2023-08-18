@@ -1,0 +1,194 @@
+@import './variables.css';
+
+html {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-width: 280px;
+    max-height: 100vh;
+
+    font-family: var(--font-family-base, 'sans-serif');
+    font-size: 62.5%;
+
+    background-color: var(--color-black);
+    overflow: hidden;
+
+    touch-action: manipulation;
+    scroll-behavior: smooth;
+}
+
+body {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 100vh;
+    gap: 5rem;
+
+    padding: 3rem;
+}
+
+.playing-field {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+
+    width: 100%;
+    gap: 5rem;
+}
+
+.side {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 15rem;
+    gap: 3rem;
+}
+
+.logs {
+    box-sizing: border-box;
+    display: block;
+    margin-top: auto;
+
+    width: 20rem;
+    height: auto;
+    max-height: 100vh;
+    overflow-y: overlay;
+    gap: .5rem;
+
+    counter-reset: logs;
+}
+
+.log {
+    display: flex;
+    text-align: left;
+    color: rgb(var(--rgb-gray-400));
+
+    &::before {
+        content: counter(logs);
+        counter-increment: logs;
+
+        display: inline-block;
+        margin-right: .5rem;
+
+        color: rgb(var(--rgb-gray-600));
+    }
+}
+
+.battlefield {
+    grid-row: 2 / 3;
+
+    position: relative;
+    box-sizing: border-box;
+
+    display: flex;
+    width: 100%;
+    padding: 2rem;
+
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4rem;
+
+    border: .1rem solid rgb(var(--rgb-gray-950));
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    grid-gap: 4rem;
+
+    width: 100%;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    grid-gap: 4rem;
+
+    &:last-of-type {
+        align-self: end;
+    }
+}
+
+.field {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 2 / 3;
+
+    border: .1rem solid rgb(var(--rgb-gray-700));
+    border-radius: .5rem;
+}
+
+.card {
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1 / 1;
+
+    border: .1rem solid rgb(var(--rgb-gray-950));
+    border-radius: 1rem;
+
+    color: rgb(var(--rgb-gray-100));
+    font-size: 1.6rem;
+
+    &.-selected {
+        outline: .1rem solid rgb(var(--rgb-blue-400));
+    }
+
+    &.-highlighted {
+        outline: .1rem solid rgb(var(--rgb-red-400));
+    }
+
+    &[data-unit] {
+        box-shadow: inset 0 0 0 .8rem rgb(var(--rgb-gray-950));
+
+        &::after {
+            content: attr(data-unit);
+        }
+    }
+
+    .field & {
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+    }
+}
+
+.deck {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1 / 1;
+
+    border: .1rem solid rgb(var(--rgb-gray-800));
+    border-radius: 1rem;
+}
+
+.graveyard {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1 / 1;
+
+    border: .1rem solid rgb(var(--rgb-gray-800));
+    border-radius: 1rem;
+}
+
+.flipped {
+    border: none;
+    box-shadow: 0 0 0 .8rem rgb(var(--rgb-gray-950));
+    background-image: linear-gradient(
+        45deg,
+        rgb(var(--rgb-gray-950)),
+        rgb(var(--rgb-gray-900)),
+        rgb(var(--rgb-gray-950))
+    );
+
+    &::after {
+        opacity: 0;
+    }
+}
