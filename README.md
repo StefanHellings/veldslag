@@ -8,4 +8,4 @@ Run `npm start` to start the game.
 
 Current progress:
 
-![image]()
+![image](https://github.com/hellingsstefan/veldslag/blob/main/veldslag.png?raw=true)
